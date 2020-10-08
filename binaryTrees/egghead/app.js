@@ -55,22 +55,21 @@ function createBinaryTree(rootKey) {
 
 const Traversals = {
   IN_ORDER: (node, visitFn) => {
-    debugger;
-    if (!!node) {
+    if (!!node && !found) {
       Traversals.IN_ORDER(node.left, visitFn);
       visitFn(node);
       Traversals.IN_ORDER(node.right, visitFn);
     }
   },
   PRE_ORDER: (node, visitFn) => {
-    if (!!node) {
+    if (!!node && !found) {
       visitFn(node);
       Traversals.PRE_ORDER(node.left, visitFn);
       Traversals.PRE_ORDER(node.right, visitFn);
     }
   },
   POST_ORDER: (node, visitFn) => {
-    if (!!node) {
+    if (!!node && !found) {
       Traversals.POST_ORDER(node.left, visitFn);
       Traversals.POST_ORDER(node.right, visitFn);
       visitFn(node);
